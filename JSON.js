@@ -1,3 +1,5 @@
+//API = Application Programme Interface
+//JSON = JavaScript Object Notation
 const object = {
   id: 24,
   name: "Touhid",
@@ -5,6 +7,7 @@ const object = {
     status: "BSc. Hons in BMB",
     School: "BSMRSTU",
   },
+  Department: "BMB",
 };
 
 //Object to JSON
