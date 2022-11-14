@@ -8,16 +8,20 @@
   <body>
     <h1>Post Data from JSON</h1>
     <ul id="username"></ul>
+    <input type="text" id="title" placeholder="title" /> <br />
+    <input type="text" id="bodyContent" placeholder="write your post" /> <br />
+    <button id="submit">Submit</button>
     <script>
-      const postInfo = {
-        title: "foo",
-        body: "bar",
-        userId: 1,
-      };
+      document.getElementById("submit").addEventListener("click", function () {
+        const title = document.getElementById("title").value;
+        const bodyContent = document.getElementById("bodyContent").value;
+        console.log(title, bodyContent);
+      });
 
+      function postContentOnServer() {}
       fetch("https://jsonplaceholder.typicode.com/posts", {
         method: "POST",
-        body: JSON.stringify(postInfo),
+        body: JSON.stringify(),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
         },
