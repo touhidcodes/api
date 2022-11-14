@@ -13,10 +13,17 @@
         .then((response) => response.json())
         .then((json) => displayData(json));
 
+      const ul = document.getElementById("username");
+
       function displayData(users) {
         const username = users.map((users) => users.username);
 
-        const li = document.createElement("li");
+        for (let i = 0; i < username.length; i++) {
+          const element = username[i];
+          const li = document.createElement("li");
+          li.innerText = element;
+          ul.appendChild(li);
+        }
       }
     </script>
   </body>
