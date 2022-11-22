@@ -19,7 +19,7 @@
       .link {
         color: crimson;
         text-align: center;
-        margin-top: 100px;
+        margin-top: 50px;
       }
     </style>
   </head>
@@ -37,9 +37,15 @@
           .then((data) => {
             const task = data.activity;
             document.getElementById("get-task").innerText = task;
-            console.log(data.activity);
+            //console.log(data.activity);
           });
       }
+
+      getTask();
+
+      setInterval(() => {
+        getTask();
+      }, 10000);
     </script>
   </body>
 </html>
