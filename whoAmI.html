@@ -11,21 +11,27 @@
         margin-top: 100px;
       }
       .name {
-        color: lightsalmon;
+        color: crimson;
         text-align: center;
         margin-top: 50px;
       }
     </style>
   </head>
   <body>
-    <h1 class="random-user">Myself Random User and I Can Generate Names</h1>
+    <h1 class="random-user">Myself Random User and I Can Generate Names:</h1>
     <h1 class="name" id="userName"></h1>
   </body>
   <script>
-    fetch("https://randomuser.me/api/")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+    function getName() {
+      fetch("https://randomuser.me/api/")
+        .then((res) => res.json())
+        .then((data) => {
+          const userName = data.results[0].name;
+          document.getElementById(
+            "userName"
+          ).innerText = `${userName.title} ${userName.first} ${userName.last}`;
+          //console.log(userName);
+        });
+    }
   </script>
 </html>
