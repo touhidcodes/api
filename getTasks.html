@@ -1,0 +1,45 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Tasks</title>
+    <style>
+      .para {
+        text-align: center;
+        margin-top: 100px;
+        font-size: 30px;
+      }
+      .task {
+        color: darkmagenta;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 30px;
+      }
+      .link {
+        color: crimson;
+        text-align: center;
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="para">Your Tasks:</h2>
+    <h1 class="task" id="get-task"></h1>
+    <h3 class="link">
+      For more info, Visit this link:
+      <a href="http://https://www.boredapi.com/api/activity/">Visit Link</a>
+    </h3>
+    <script>
+      function getTask() {
+        fetch("https://www.boredapi.com/api/activity/")
+          .then((res) => res.json())
+          .then((data) => {
+            const task = data.activity;
+            document.getElementById("get-task").innerText = task;
+            console.log(data.activity);
+          });
+      }
+    </script>
+  </body>
+</html>
